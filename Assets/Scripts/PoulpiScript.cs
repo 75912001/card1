@@ -11,7 +11,7 @@ public class PoulpiScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.movement = new Vector2( this.speed.x * this.direction.x, this.speed.y * this.direction.y);
+		movement = new Vector2( this.speed.x * this.direction.x, this.speed.y * this.direction.y);
 	}
 	void FixedUpdate() { 
 		// Apply movement to the rigidbody 

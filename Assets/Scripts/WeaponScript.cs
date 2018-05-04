@@ -26,20 +26,27 @@ public class WeaponScript : MonoBehaviour {
 		}
 		shootCoolDown = shootingRate;
 
-		GameObject bulletPrefab = (GameObject)Resources.Load("Prefabs/Bullet0001");
-		Instantiate(bulletPrefab); 
-		bulletPrefab.transform.position = transform.position;
+		GameObject bulletPrefabs = (GameObject)Resources.Load("Prefabs/Bullet0001");
+		//var bulletTranform = Instantiate(bulletPrefab.transform) as Transform;
+		//bulletTranform.position = transform.position;
+		//print ("WeaponScript");
+		//print (bulletTranform.position);
+
+		GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
+		//bulletPrefab.transform.position = transform.position;
+		//Debug.Log(bulletPrefab.transform.position);
 
 		BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
 		if (null == bulletScript) {
 			return;
 		}
 		bulletScript.isEnemyShot = isEnemy;
+
 		BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
 		if (null == bulletMoveScript) {
 			return;
 		}
-		bulletMoveScript.direction = this.transform.right;
+		bulletMoveScript.direction = transform.right;
 	}
 	public Transform bulletPrefab;
 	public float shootingRate = 0.25f;

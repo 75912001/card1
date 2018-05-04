@@ -20,13 +20,15 @@ public class PlayerScript : MonoBehaviour {
 		if (shoot) {
 			WeaponScript weaponScript = GetComponent<WeaponScript> ();
 			if (null != weaponScript) {
+				//print ("player");
 				weaponScript.Attack (false);
 			}
 		}
 	}
 	void FixedUpdate() {
-		print (this.movement);
-		GetComponent<Rigidbody2D>().velocity =this.movement;
+		//print ("player");
+		//print (transform.position);
+		GetComponent<Rigidbody2D>().velocity = movement;
 	} 
 
 	public Vector2 speed = new Vector2 (50, 50);
