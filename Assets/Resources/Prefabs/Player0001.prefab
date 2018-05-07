@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50842910994741720}
   - component: {fileID: 114708677640348718}
   - component: {fileID: 114983392916883606}
+  - component: {fileID: 114145861134441930}
   m_Layer: 0
   m_Name: Player0001
   m_TagString: Untagged
@@ -89,6 +90,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.901161, y: 10.368683}
   m_EdgeRadius: 0
+--- !u!114 &114145861134441930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201314865820230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25922efcedb54ccd88b2258f8be2083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  isEnemy: 0
 --- !u!114 &114708677640348718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 5, y: 5}
+  weaponScript: {fileID: 0}
 --- !u!114 &114983392916883606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af08a279155a4a6e852191feaf072b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
   shootingRate: 0.25
 --- !u!212 &212429890483450982
 SpriteRenderer:

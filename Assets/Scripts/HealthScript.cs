@@ -33,4 +33,6 @@ public class HealthScript : MonoBehaviour {
 	}
 	public int hp = 1;
 	public bool isEnemy = true;
+	//碰撞给对方造成的伤害
+	public int collisionDamage = 1;
 }

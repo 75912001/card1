@@ -26,29 +26,40 @@ public class WeaponScript : MonoBehaviour {
 		}
 		shootCoolDown = shootingRate;
 
-		GameObject bulletPrefabs = (GameObject)Resources.Load("Prefabs/Bullet0001");
-		//var bulletTranform = Instantiate(bulletPrefab.transform) as Transform;
-		//bulletTranform.position = transform.position;
-		//print ("WeaponScript");
-		//print (bulletTranform.position);
+		if (isEnemy) {
+			GameObject bulletPrefabs = (GameObject)Resources.Load ("Prefabs/Bullet0002");
+			GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
 
-		GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
-		//bulletPrefab.transform.position = transform.position;
-		//Debug.Log(bulletPrefab.transform.position);
+			BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
+			if (null == bulletScript) {
+				return;
+			}
+			bulletScript.isEnemyShot = isEnemy;
 
-		BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
-		if (null == bulletScript) {
-			return;
+			BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
+			if (null == bulletMoveScript) {
+				return;
+			}
+			bulletMoveScript.direction = transform.right;
+			bulletMoveScript.direction.x = -1;
+		} else {
+			GameObject bulletPrefabs = (GameObject)Resources.Load ("Prefabs/Bullet0001");
+			GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
+
+			BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
+			if (null == bulletScript) {
+				return;
+			}
+			bulletScript.isEnemyShot = isEnemy;
+
+			BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
+			if (null == bulletMoveScript) {
+				return;
+			}
+			bulletMoveScript.direction = transform.right;
+			bulletMoveScript.direction.x = 1;
 		}
-		bulletScript.isEnemyShot = isEnemy;
-
-		BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
-		if (null == bulletMoveScript) {
-			return;
-		}
-		bulletMoveScript.direction = transform.right;
 	}
-	public Transform bulletPrefab;
 	public float shootingRate = 0.25f;
-	private float shootCoolDown;
+	public float shootCoolDown;
 }

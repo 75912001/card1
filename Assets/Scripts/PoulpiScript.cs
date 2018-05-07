@@ -11,14 +11,16 @@ public class PoulpiScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		movement = new Vector2( this.speed.x * this.direction.x, this.speed.y * this.direction.y);
+		float x = -Random.Range (0.1f, 0.5f);
+		float y = Random.Range (-0.5f, 0.5f);
+		movement = new Vector2( this.speed.x * x, this.speed.y * y);
 	}
 	void FixedUpdate() { 
 		// Apply movement to the rigidbody 
 		GetComponent<Rigidbody2D>().velocity = movement; 
 	}
 
-	public Vector2 speed = new Vector2(10, 10);
+	public Vector2 speed = new Vector2(1, 1);
 	public Vector2 direction = new Vector2(-1, 0);
 	private Vector2 movement;
 }

@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 50278047236026820}
   - component: {fileID: 114756933702770318}
   - component: {fileID: 114330055852295290}
+  - component: {fileID: 114423512829169928}
+  - component: {fileID: 114925847880840366}
   m_Layer: 0
   m_Name: Poulpi0001
   m_TagString: Untagged
@@ -102,6 +104,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 1, y: 1}
   direction: {x: -1, y: 0}
+--- !u!114 &114423512829169928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880432980846246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af08a279155a4a6e852191feaf072b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingRate: 0.75
 --- !u!114 &114756933702770318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +129,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+--- !u!114 &114925847880840366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880432980846246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87dd2ec3629814772976578310bea5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212081081073768522
 SpriteRenderer:
   m_ObjectHideFlags: 1
