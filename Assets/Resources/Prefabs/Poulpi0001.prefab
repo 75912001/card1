@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880432980846246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28, y: 0, z: 5}
+  m_LocalPosition: {x: 15.663343, y: -7.1726913, z: 80}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingRate: 0.75
+  shootCoolDown: 0
 --- !u!114 &114756933702770318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  collisionDamage: 1
 --- !u!114 &114925847880840366
 MonoBehaviour:
   m_ObjectHideFlags: 1
