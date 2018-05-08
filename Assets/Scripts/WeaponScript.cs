@@ -13,24 +13,24 @@ public class WeaponScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//更新射击冷却时间
-		if (0 < shootCoolDown) {
-			shootCoolDown -= Time.deltaTime;
+		if (0 < this.shootCoolDown) {
+			this.shootCoolDown -= Time.deltaTime;
 		}
 	}
 
 	//是否可以攻击
 	public bool CanAttack{
 		get{
-			return shootCoolDown <= 0f;
+			return this.shootCoolDown <= 0f;
 		}
 	}
 
 	//攻击
 	public void Attack(bool isEnemy, string bulletName){
-		if (!CanAttack) {
+		if (!this.CanAttack) {
 			return;
 		}
-		shootCoolDown = shootingRate;
+		this.shootCoolDown = this.shootingRate;
 
 		GameObject bulletPrefabs = (GameObject)Resources.Load (bulletName);
 		GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
@@ -45,12 +45,15 @@ public class WeaponScript : MonoBehaviour {
 			Debug.LogErrorFormat ("查找BulletMoveScript失败{0}", bulletName);
 			return;
 		}
+		bulletMoveScript.moveType = 1;
 		bulletMoveScript.direction = transform.right;
+
 		if (isEnemy) {
 			bulletMoveScript.direction.x = -1;
 		} else {
 			bulletMoveScript.direction.x = 1;
 		}
+
 	}
 	//射击 秒
 	public float shootingRate = 0.25f;

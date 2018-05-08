@@ -13,7 +13,7 @@ public class BulletMoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		switch (this.moveType) {
-		case 1:
+		case 1://直线
 			this.movement = new Vector2 (this.speed.x * this.direction.x, this.speed.y * this.direction.y);
 			break;
 		default:
@@ -33,6 +33,5 @@ public class BulletMoveScript : MonoBehaviour {
 	private Vector2 movement;
 
 	//移动的类型
-	//1.直线
 	public int moveType = 1;
 }

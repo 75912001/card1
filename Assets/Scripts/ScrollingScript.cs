@@ -2,41 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//滚动
 public class ScrollingScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (isLooping){
+		if (this.isLooping){
 			//拥有Renderer(渲染器)的列表
-			childList = new List<Transform>();
+			this.childList = new List<Transform>();
 			for (int i = 0; i < transform.childCount; i++){
 				Transform child = transform.GetChild(i);
 				Renderer renderer = child.gameObject.GetComponent<Renderer> ();
-				if (null != renderer){
-					childList.Add(child);
+				if (null != renderer) {
+					this.childList.Add (child);
 					print (child.position.x);
 					print (child.position.y);
+				} else {
+					Debug.LogErrorFormat ("ScrollingScript未找到Renderer");
 				}
 			}
-			childList.Sort((x, y) => x.position.x.CompareTo(y.position.x));//position.x升序
-			//backGroundPart.Sort((x, y) => -x.position.x.CompareTo(y.position.x));//position.x降序
 
-			print (childList.Count);
+			this.childList.Sort((x, y) => x.position.x.CompareTo(y.position.x));//position.x升序
+			//this.childList.Sort((x, y) => -x.position.x.CompareTo(y.position.x));//position.x降序
+
+			print (this.childList.Count);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 movement = new Vector3(speed.x*direction.x, speed.y*direction.y,0);
+		Vector3 movement = new Vector3(this.speed.x*this.direction.x, this.speed.y*this.direction.y,0);
 		movement *= Time.deltaTime;
 		transform.Translate (movement);
-		if (isLinkedToCamera) {
+		if (this.isLinkedToCamera) {
 			Camera.main.transform.Translate (movement);
 		}
 
-		if (isLooping) {
-			if (0 < childList.Count) {
-				Transform firstChild = childList[0];
+		if (this.isLooping) {
+			if (0 < this.childList.Count) {
+				Transform firstChild = this.childList[0];
 				// Check if the child is already (partly) before the camera.
 				// We test the position first because the IsVisibleFrom
 				// method is a bit heavier to execute.
@@ -46,10 +50,10 @@ public class ScrollingScript : MonoBehaviour {
 					// recycled.
 					Renderer firstRenderer = firstChild.gameObject.GetComponent<Renderer> ();
 					// Add only the visible children
-					if (null != firstRenderer){
+					if (null != firstRenderer) {
 						if (!firstRenderer.isVisibleExt (Camera.main)) {
 							// Get the last child position.
-							Transform lastChild = childList[childList.Count - 1];
+							Transform lastChild = childList [childList.Count - 1];
 							Renderer lastRenderer = lastChild.gameObject.GetComponent<Renderer> ();
 							if (null != lastRenderer) {
 								Vector3 lastPosition = lastChild.transform.position;
@@ -57,19 +61,23 @@ public class ScrollingScript : MonoBehaviour {
 								// Set the position of the recyled one to be AFTER
 								// the last child.
 								// Note: Only work for horizontal scrolling currently.
-								print (childList.Count);
-								print(firstChild.position.x);
+								print (this.childList.Count);
+								print (firstChild.position.x);
 								print (firstChild.position.y);
 								firstChild.position = new Vector3 (lastPosition.x + lastSize.x, firstChild.position.y, firstChild.position.z);
-								print(firstChild.position.x);
+								print (firstChild.position.x);
 								print (firstChild.position.y);
 								// Set the recycled child to the last position
 								// of the backgroundPart list.
 								childList.Remove (firstChild);
 								childList.Add (firstChild);
-								print (childList.Count);
+								print (this.childList.Count);
+							} else {
+								Debug.LogErrorFormat ("lastChild未找到Renderer");
 							}
 						}
+					} else {
+						Debug.LogErrorFormat ("firstChild未找到Renderer");
 					}
 				}
 			}

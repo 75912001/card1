@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 61464760381568554}
   - component: {fileID: 50278047236026820}
   - component: {fileID: 114423512829169928}
-  - component: {fileID: 114925847880840366}
   - component: {fileID: 114007724954212872}
   - component: {fileID: 114584234574500142}
   m_Layer: 0
@@ -115,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af08a279155a4a6e852191feaf072b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingRate: 0.75
+  shootingRate: 0.1
   shootCoolDown: 0
 --- !u!114 &114584234574500142
 MonoBehaviour:
@@ -129,19 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
+  hp_max: 10
   isEnemy: 1
   collisionDamage: 1
---- !u!114 &114925847880840366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880432980846246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87dd2ec3629814772976578310bea5bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212081081073768522
 SpriteRenderer:
   m_ObjectHideFlags: 1

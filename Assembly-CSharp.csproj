@@ -51,8 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BulletMoveScript.cs" />
-     <Compile Include="Assets\Scripts\BulletScript.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletMoveScript.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
