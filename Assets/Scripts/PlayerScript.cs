@@ -28,9 +28,9 @@ public class PlayerScript : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = movement;
 	} 
 	void OnCollisionEnter2D(Collision2D collision){
-		PoulpiScript poulpi = collision.gameObject.GetComponent<PoulpiScript> ();
-		if (null != poulpi) {
-			HealthScript poulpiHealth = poulpi.GetComponent<HealthScript> ();
+		EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript> ();
+		if (null != enemy) {
+			HealthScript poulpiHealth = enemy.GetComponent<HealthScript> ();
 			if (null != poulpiHealth) {
 				HealthScript playerHealth = this.GetComponent<HealthScript> ();
 				if (null != playerHealth) {

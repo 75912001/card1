@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyWeaponScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
-		weaponScript.Attack (true);
+		//weaponScript.Attack (true);
 	}
 
 	void Awake(){
