@@ -2,25 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
 public class WeaponScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		shootCoolDown = 0f;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//更新射击冷却时间
 		if (0 < shootCoolDown) {
 			shootCoolDown -= Time.deltaTime;
 		}
 	}
+
+	//是否可以攻击
 	public bool CanAttack{
 		get{
 			return shootCoolDown <= 0f;
 		}
 	}
-	public void Attack(bool isEnemy){
+
+	//攻击
+	public void Attack(bool isEnemy, string bulletName){
 		if (!CanAttack) {
 			return;
 		}
@@ -32,6 +38,7 @@ public class WeaponScript : MonoBehaviour {
 
 			BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
 			if (null == bulletScript) {
+				Debug.LogErrorFormat ("查找子弹失败{0}", bulletName);
 				return;
 			}
 			bulletScript.isEnemyShot = isEnemy;
@@ -60,6 +67,8 @@ public class WeaponScript : MonoBehaviour {
 			bulletMoveScript.direction.x = 1;
 		}
 	}
+	//射击 秒
 	public float shootingRate = 0.25f;
-	public float shootCoolDown;
+	//射击冷却时间 秒
+	public float shootCoolDown = 0f;
 }

@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212081081073768522}
   - component: {fileID: 61464760381568554}
   - component: {fileID: 50278047236026820}
-  - component: {fileID: 114756933702770318}
-  - component: {fileID: 114330055852295290}
   - component: {fileID: 114423512829169928}
   - component: {fileID: 114925847880840366}
+  - component: {fileID: 114007724954212872}
+  - component: {fileID: 114584234574500142}
   m_Layer: 0
   m_Name: Poulpi0001
   m_TagString: Untagged
@@ -91,7 +91,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.951045, y: 3.6666937}
   m_EdgeRadius: 0
---- !u!114 &114330055852295290
+--- !u!114 &114007724954212872
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880432980846246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef56671c924d4bb3ae2b9cc3bd69838, type: 3}
+  m_Script: {fileID: 11500000, guid: 38f74e989edbc44cc8b688bcfd885265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 1, y: 1}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingRate: 0.75
   shootCoolDown: 0
---- !u!114 &114756933702770318
+--- !u!114 &114584234574500142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
