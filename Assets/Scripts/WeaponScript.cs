@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//
+//开火
 public class WeaponScript : MonoBehaviour {
 
 	// Use this for initialization
@@ -32,38 +32,23 @@ public class WeaponScript : MonoBehaviour {
 		}
 		shootCoolDown = shootingRate;
 
+		GameObject bulletPrefabs = (GameObject)Resources.Load (bulletName);
+		GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
+		BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
+		if (null == bulletScript) {
+			Debug.LogErrorFormat ("查找BulletScript失败{0}", bulletName);
+			return;
+		}
+		bulletScript.isEnemyShot = isEnemy;
+		BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
+		if (null == bulletMoveScript) {
+			Debug.LogErrorFormat ("查找BulletMoveScript失败{0}", bulletName);
+			return;
+		}
+		bulletMoveScript.direction = transform.right;
 		if (isEnemy) {
-			GameObject bulletPrefabs = (GameObject)Resources.Load ("Prefabs/Bullet0002");
-			GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
-
-			BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
-			if (null == bulletScript) {
-				Debug.LogErrorFormat ("查找子弹失败{0}", bulletName);
-				return;
-			}
-			bulletScript.isEnemyShot = isEnemy;
-
-			BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
-			if (null == bulletMoveScript) {
-				return;
-			}
-			bulletMoveScript.direction = transform.right;
 			bulletMoveScript.direction.x = -1;
 		} else {
-			GameObject bulletPrefabs = (GameObject)Resources.Load ("Prefabs/Bullet0001");
-			GameObject bulletPrefab = Instantiate (bulletPrefabs, transform.position, transform.rotation);
-
-			BulletScript bulletScript = bulletPrefab.GetComponent<BulletScript> ();
-			if (null == bulletScript) {
-				return;
-			}
-			bulletScript.isEnemyShot = isEnemy;
-
-			BulletMoveScript bulletMoveScript = bulletPrefab.GetComponent<BulletMoveScript> ();
-			if (null == bulletMoveScript) {
-				return;
-			}
-			bulletMoveScript.direction = transform.right;
 			bulletMoveScript.direction.x = 1;
 		}
 	}

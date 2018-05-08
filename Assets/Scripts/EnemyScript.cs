@@ -29,7 +29,7 @@ public class EnemyScript : MonoBehaviour {
 			// Auto-fire
 			foreach (WeaponScript weapon in weapons){
 				if (weapon != null && weapon.enabled && weapon.CanAttack){
-					weapon.Attack(true);
+					weapon.Attack(true,"Prefabs/Bullet0002");
 				}
 			}
 

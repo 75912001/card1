@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour {
 		//shoot
 		//bool shoot = Input.GetButtonDown("Fire1");
 		//if (shoot) {
-			weaponScript.Attack (false);
+		weaponScript.Attack (false,"Prefabs/Bullet0001");
 		//}
 	}
 	void FixedUpdate() {
