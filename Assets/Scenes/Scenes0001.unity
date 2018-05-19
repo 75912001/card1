@@ -208,11 +208,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25.9
+      value: 21.6
       objectReference: {fileID: 0}
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.z
@@ -374,6 +374,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 540898614}
+  - component: {fileID: 540898615}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -394,6 +395,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &540898615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540898613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e2c653d08d34cd6872e68a9504f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokeEffect: {fileID: 198711358481251638, guid: e1c4288c512144282b310407cfe5ec25,
+    type: 2}
 --- !u!4 &563219875 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda,
@@ -657,11 +671,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 33.1
+      value: 23.3
       objectReference: {fileID: 0}
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.57
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1162,11 +1176,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 33.8
+      value: 24.7
       objectReference: {fileID: 0}
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.86
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4804704412329890, guid: 8e1135387c4964dfe96cead60c424dda, type: 2}
       propertyPath: m_LocalPosition.z

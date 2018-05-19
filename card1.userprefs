@@ -1,16 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyWeaponScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HealthScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnemyWeaponScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BulletScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BulletMoveScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RendererExtensions.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SpecialEffectsHelperScript.cs" Line="31" Column="108" />
+      <File FileName="Assets/Scripts/PlayerScript.cs" Line="15" Column="17" />
+      <File FileName="Assets/Scripts/EnemyScript.cs" Line="12" Column="4" />
       <File FileName="Assets/Scripts/WeaponScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ScrollingScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HealthScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bullet/BulletMoveScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bullet/BulletScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HealthScript.cs" Line="22" Column="71" />
+      <File FileName="Assets/Scripts/RendererExtensions.cs" Line="9" Column="23" />
+      <File FileName="Assets/Scripts/ScrollingScript.cs" Line="88" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

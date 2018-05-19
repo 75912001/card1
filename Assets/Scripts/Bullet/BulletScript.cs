@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//n秒后自动销毁
-		Destroy(this.gameObject, 10);
+		Destroy(gameObject, 10);
 	}
 	
 	// Update is called once per frame
