@@ -36,9 +36,6 @@ public class PlayerScript : MonoBehaviour {
 				transform.position.z);
 		}
 		{//射击
-			//bool shoot = Input.GetButtonDown("Fire1");
-			//if (shoot) {
-			//this.weaponScript.Attack (false, "Prefabs/Bullet0001");
 			foreach (WeaponScript weapon in this.weaponScripts) {
 				if (null != weapon && weapon.enabled && weapon.CanAttack) {
 					weapon.Attack (false, "Prefabs/Bullet0001");

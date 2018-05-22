@@ -72,6 +72,38 @@ public class ScrollingScript : MonoBehaviour {
 								childList.Remove (firstChild);
 								childList.Add (firstChild);
 								print (this.childList.Count);
+
+								/////////////////////////
+								/// 创建新的敌人
+								//Debug.LogErrorFormat ("!!!!!!");
+								{	string name = "Prefabs/Poulpi0001";
+									GameObject prefabs = (GameObject)Resources.Load (name);
+									GameObject prefab = Instantiate (prefabs, transform.position, transform.rotation);
+									{
+										EnemyScript script = prefab.GetComponent<EnemyScript> ();
+										if (null == script) {
+											Debug.LogErrorFormat ("查找script失败{0}", name);
+											return;
+										}
+										script.speed.x = 1;
+										script.speed.y = 1;
+										script.direction.x = -1;
+									}
+									{
+										HealthScript script = prefab.GetComponent<HealthScript> ();
+										if (null == script) {
+											Debug.LogErrorFormat ("查找script失败{0}", name);
+											return;
+										}
+										script.hp = 1;
+										script.hp_max = 10;
+										script.isEnemy = true;
+										script.collisionDamage = 1;
+									}
+									{
+										prefab.transform.position = new Vector3 (20, 3, 50);
+									}
+								}
 							} else {
 								Debug.LogErrorFormat ("lastChild未找到Renderer");
 							}
