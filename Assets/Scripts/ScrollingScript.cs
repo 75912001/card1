@@ -31,7 +31,8 @@ public class ScrollingScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 movement = new Vector3(this.speed.x*this.direction.x, this.speed.y*this.direction.y,0);
+		Vector3 movement = new Vector3(this.speed.x*this.direction.x, 
+			this.speed.y*this.direction.y,0);
 		movement *= Time.deltaTime;
 		transform.Translate (movement);
 		if (this.isLinkedToCamera) {
